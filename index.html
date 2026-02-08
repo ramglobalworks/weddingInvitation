@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Приглашение на свадьбу</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Шрифты -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<div class="desktop-warning">
+    Этот сайт предназначен для просмотра с мобильного устройства 🤍
+</div>
+
+<div class="mobile-site">
+    <!-- Первая секция -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="resources/back.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <div class="subtitle-wrap">
+                <div class="subtitle">Приглашение на свадьбу</div>
+            </div>
+
+            <div class="names-wrap">
+                <div class="names">Рамин<br>&<br>Эмина</div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span class="arrow"></span>
+            <span class="arrow"></span>
+        </div>
+    </section>
+
+
+    <!-- Вторая секция -->
+    <section>
+        <div class="invite-title">
+            Дорогие родные и близкие!
+        </div>
+        <div class="invite-text">
+            Мы будем счастливы разделить с вами один из самых важных дней в нашей жизни.
+            Приглашаем вас стать частью нашего праздника любви и тепла.
+        </div>
+    </section>
+
+    <div class="section-divider">
+        <span></span>
+    </div>
+
+    <!-- Третья секция -->
+    <section>
+        <div class="invite-title">
+            Локация
+        </div>
+        <div class="invite-text">
+            Наша свадьба состоится<br><b>27.04.26</b><br>В ресторане <b>"Фаетон"</b><br><br>
+        </div>
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1275dc3d2f26f06a5115639360ee37f4592062c559e7633c01fa6c17ce46fd15&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+    </section>
+</div>
+
+<script>
+    // const isMobile = window.innerWidth <= 768;
+    const isMobile = true;
+
+    document.querySelector('.mobile-site').style.display = isMobile ? 'block' : 'none';
+    document.querySelector('.desktop-warning').style.display = isMobile ? 'none' : 'flex';
+
+    const video = document.querySelector('.hero-video');
+
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        video.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+</script>
+
+</body>
+</html>
