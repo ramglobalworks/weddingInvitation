@@ -19,7 +19,7 @@ body {
 /* Экран для десктопа */
 .desktop-warning {
     display: none;
-    height: 100vh;
+    height: 100svh;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -38,13 +38,14 @@ section {
 
 /* Первая секция */
 .hero {
-    min-height: 100vh;
+    min-height: 100svh;
     position: relative;
     text-align: center;
     height: 100svh;
     padding-top: var(--safe-top);
     overflow: hidden;
     color: white;
+    background: black;
 }
 
 .hero-video {
