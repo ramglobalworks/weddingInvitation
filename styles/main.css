@@ -1,3 +1,8 @@
+:root {
+    --safe-top: env(safe-area-inset-top);
+    --safe-bottom: env(safe-area-inset-bottom);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -35,11 +40,9 @@ section {
 .hero {
     min-height: 100vh;
     position: relative;
-    /*align-items: center;
-    display: flex;
-    justify-content: center;*/
     text-align: center;
-    height: 100vh;
+    height: 100svh;
+    padding-top: var(--safe-top);
     overflow: hidden;
     color: white;
 }
@@ -47,10 +50,10 @@ section {
 .hero-video {
     filter: blur(0.5px ) grayscale(20%) brightness(70%);
     position: absolute;
-    top: 0;
+    top: calc(-1 * var(--safe-top));
     left: 0;
     width: 100%;
-    height: 120%;
+    height: calc(120% + var(--safe-top));
     object-fit: cover;
     transform: translateY(0);
     will-change: transform;
@@ -84,7 +87,7 @@ section {
 
 .subtitle-wrap {
     position: absolute;
-    top: 12%;
+     top: calc(12% + var(--safe-top));
     left: 0;
     right: 0;
     transform: translateX(-50%);
