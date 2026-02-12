@@ -16,6 +16,42 @@ body {
     background: #000000;
 }
 
+ /* Полноэкранный блок */
+  #welcomeScreen {
+    position: fixed;
+    inset: 0;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+
+    opacity: 1;
+    transition: opacity 0.6s ease;
+  }
+
+  /* Состояние скрытия */
+  #welcomeScreen.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Кнопка */
+  #openBtn {
+    padding: 20px 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    transition: transform 0.3s ease, background 0.3s;
+  }
+
+  #openBtn:hover {
+    transform: scale(1.08);
+    background: #ddd;
+  }
+
 /* Экран для десктопа */
 .desktop-warning {
     display: none;

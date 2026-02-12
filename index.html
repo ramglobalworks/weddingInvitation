@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <div id="welcomeScreen">
+  <button id="openBtn">Открыть</button>
+</div>
+    <audio id="bgMusic" loop autoplay>
+        <source src="resources/wayne-jones-touching-moment.mp3" type="audio/mpeg">
+    </audio>
+
 <div class="desktop-warning">
     Этот сайт предназначен для просмотра с мобильного устройства 🤍
 </div>
@@ -78,6 +85,20 @@
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         video.style.transform = `translateY(${scrolled * 0.3}px)`;
+    });
+
+    const screen = document.getElementById("welcomeScreen");
+    const btn = document.getElementById("openBtn");
+
+    btn.addEventListener("click", function() {
+    const music = document.getElementById("bgMusic");
+    music.play().catch(err => console.log(err));
+    screen.classList.add("hide");
+
+    // Полностью удаляем после анимации
+    setTimeout(() => {
+      screen.style.display = "none";
+    }, 600);
     });
 </script>
 
