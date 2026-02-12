@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-<div class="debug-safe"></div>
 <div class="desktop-warning">
     Этот сайт предназначен для просмотра с мобильного устройства 🤍
 </div>
@@ -22,7 +21,7 @@
     <!-- Первая секция -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop playsinline>
-            <source src="resources/back.mp4" type="video/mp4">
+            <source src="resources/3.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <div class="subtitle-wrap">
@@ -61,7 +60,7 @@
             Локация
         </div>
         <div class="invite-text">
-            Наша свадьба состоится<br><b>27.04.26</b><br>В ресторане <b>"Фаетон"</b><br><br>
+            Наша свадьба состоится<br><b>27.04.26</b><br>В ресторане <b>"Фаэтон"</b><br><br>
         </div>
         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A1275dc3d2f26f06a5115639360ee37f4592062c559e7633c01fa6c17ce46fd15&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
     </section>
@@ -75,7 +74,7 @@
     document.querySelector('.desktop-warning').style.display = isMobile ? 'none' : 'flex';
 
     const video = document.querySelector('.hero-video');
-
+    video.playbackRate = 0.4;
     window.addEventListener('scroll', () => {
         const scrolled = window.pageYOffset;
         video.style.transform = `translateY(${scrolled * 0.3}px)`;

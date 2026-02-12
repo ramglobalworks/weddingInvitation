@@ -16,20 +16,10 @@ body {
     background: rgb(199 199 199 / 72%);
 }
 
-.debug-safe {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: env(safe-area-inset-top);
-    background: red;
-    z-index: 9999;
-}
-
 /* Экран для десктопа */
 .desktop-warning {
     display: none;
-    height: 100svh;
+    height: 100dvh;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -48,11 +38,12 @@ section {
 
 /* Первая секция */
 .hero {
-    min-height: 100svh;
+    min-height: 100dvh;
     position: relative;
     text-align: center;
-    height: 100svh;
-    padding-top: var(--safe-top);
+    height: 100dvh;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
     overflow: hidden;
     color: white;
     background: black;
